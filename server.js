@@ -39,18 +39,6 @@ app.get('/api/persons', (request, response) => {
   Person.find({}).then(persons => {
     response.json(persons)
   })
-
-  Person.find({name: 'Con Springer'})
-    .then(result => {
-      if (result.length === 0) {
-        console.log('No one found')
-      } else {
-        console.log(result)
-      }
-    })
-    .catch(error => {
-      console.log(error)
-    })
 })
 
 app.get('/api/persons/:id', (request, response, next) => {
